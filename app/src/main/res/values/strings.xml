@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">SportsApp</string>
+    <!--    <string name="app_name">SportsApp</string>-->
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <!-- LOGIN SCREEN -->
+    <string name="tv_login_title_text">Welcome!</string>
+    <string name="et_login_email_hint">Email ID</string>
+    <string name="et_login_password_hint">Password</string>
+    <string name="btn_login_login_text">Login</string>
+    <string name="tv_login_forgotpassword_text"><u>Forgot Password?</u></string>
+    <string name="tv_login_donthaveanaccount_text">Don\'t have an account?</string>
+    <string name="tv_login_register_text"><u>Register</u></string>
+
+    <!-- REGISTER SCREEN -->
+    <string name="tv_register_title_text">CREATE AN ACCOUNT</string>
+    <string name="til_register_firstname_hint">First name</string>
+    <string name="til_register_lastname_hint">Last name</string>
+    <string name="til_register_email_hint">Email ID</string>
+    <string name="til_register_password_hint">Password</string>
+    <string name="til_register_confirmpassword_hint">Confirm Password</string>
+    <string name="cb_register_termsandcondition_text">I Agree to the <u>Terms and Condition</u></string>
+    <string name="btn_register_register_text">Register</string>
+    <string name="tv_register_alreadyhaveanaccount_text">Already have an account?</string>
+    <string name="tv_register_login_text"><u>Login</u></string>
+
+    !-- FORGOT PASSWORD SCREEN -->
+    <string name="tv_forgotpassword_title_text">FORGOT PASSWORD?</string>
+    <string name="tv_forgotpassword_description_text">Please enter your e-mail address and we\'ll send you an email to reset your password</string>
+    <string name="btn_forgotpassowrd_submit_text">Submit</string>
+    <string name="tv_forgotpassword_back_text">Back to login?</string>
+    <string name="tv_forgotpassword_login_text"><u>Login</u></string>
+
+
+</resources>
