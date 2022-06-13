@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
         logoutButton.setOnClickListener{
             FirebaseAuth.getInstance().signOut()
 
-            startActivity(Intent(this@MainActivity, LoginActivity::class.java))
+            startActivity(Intent(this@MainActivity, AddingDataActivity::class.java))
             finish()
         }
     }

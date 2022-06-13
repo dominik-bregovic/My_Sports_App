@@ -36,5 +36,10 @@
     <string name="tv_forgotpassword_back_text">Back to login?</string>
     <string name="tv_forgotpassword_login_text"><u>Login</u></string>
 
+    !-- Adding Data Screen -->
+    <string name="et_addingdata_sport_text">Enter sport</string>
+    <string name="et_addingdata_item_text">Enter item</string>
+    <string name="btn_addingdata_submit_text">Submit</string>
+    <string name="tv_addingdata_login_text"><u>Back</u></string>
 
 </resources>
