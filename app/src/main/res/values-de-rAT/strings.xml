@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SportsApp</string>
+    <string name="action_settings">Einstellungen</string>
+    <string name="tb_toolbar_title_text">Sports Master</string>
+    <string name="tb_toolbar_logout_text">Ausloggen</string>
+    <string name="ml_main_choose">Wähle deinen Sport</string>
+    <string name="tv_main_login_text">Erfolgreich eingelogged</string>
+    <string name="tv_login_title_text">Wilkommen</string>
+    <string name="et_login_email_hint">Email Id</string>
+    <string name="et_login_password_hint">Passwort</string>
+    <string name="btn_login_login_text">Login</string>
+    <string name="tv_login_forgotpassword_text">Passwort Vergessen?</string>
+    <string name="tv_login_donthaveanaccount_text">Habe noch keinen Accout?</string>
+    <string name="tv_login_register_text">Registrieren</string>
+    <string name="tv_register_title_text">Erstelle Account</string>
+    <string name="til_register_firstname_hint">Vorname</string>
+    <string name="til_register_lastname_hint">Nachname</string>
+    <string name="til_register_email_hint">Email Id</string>
+    <string name="til_register_password_hint">Passwort</string>
+    <string name="til_register_confirmpassword_hint">Bestätige Passwort</string>
+    <string name="cb_register_termsandcondition_text">Ich Stimme den Konditionen zu</string>
+    <string name="btn_register_register_text">Registrieren</string>
+    <string name="tv_register_alreadyhaveanaccount_text">Habe bereits einen Account</string>
+    <string name="tv_register_login_text">Login</string>
+    <string name="tv_forgotpassword_title_text">Passwort vergessen?</string>
+    <string name="tv_forgotpassword_description_text">Gebin sie ihre Emailaddresse ein</string>
+    <string name="btn_forgotpassowrd_submit_text">Bestätigen</string>
+    <string name="tv_forgotpassword_back_text">Zurück zum Login?</string>
+    <string name="tv_forgotpassword_login_text">Login</string>
+    <string name="et_addingdata_sport_text">Gib Sportart an</string>
+    <string name="et_addingdata_item_text">Gib Equipment an</string>
+    <string name="btn_addingdata_submit_text">Bestätige</string>
+    <string name="tv_addingdata_login_text">Zurück</string>
+    <string name="tv_showsportequipment_text">Noch nichts in unserer Sammlung ....</string>
+    <string name="tv_showsport_text">Sport</string>
+</resources>
