@@ -37,6 +37,7 @@ class AddingDataActivity : AppCompatActivity() {
 
             // Toast to message on the screen
             Toast.makeText(this, name + " added to database", Toast.LENGTH_LONG).show()
+            println(db.readableDatabase)
 
             // at last, clearing edit texts
             nameText.clearComposingText()
