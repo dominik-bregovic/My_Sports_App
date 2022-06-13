@@ -1,5 +1,6 @@
 package com.example.sports_app
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         createSpinner()
     }
 
+    @SuppressLint("Range")
     fun createSpinner(){
         val db = DBHelper(this, null)
         val courser = db.getSportsTable()
@@ -49,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         } finally {
             courser.close();
         }
-
+        println(list)
 
         // adding the Data to Spinner
         if (spinner != null) {

@@ -1,5 +1,6 @@
 package com.example.sports_app
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth
  * Last Changed: 13.06.2022
  */
 class ShowSportActivity : AppCompatActivity() {
+    @SuppressLint("Range")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_sport)
