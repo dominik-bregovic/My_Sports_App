@@ -8,6 +8,10 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
+    <!-- Toolbar -->
+    <string name="tb_toolbar_title_text">Sports Master</string>
+    <string name="tb_toolbar_logout_text">Logout</string>
+
     <!-- LOGIN SCREEN -->
     <string name="tv_login_title_text">Welcome!</string>
     <string name="et_login_email_hint">Email ID</string>
@@ -41,5 +45,7 @@
     <string name="et_addingdata_item_text">Enter item</string>
     <string name="btn_addingdata_submit_text">Submit</string>
     <string name="tv_addingdata_login_text"><u>Back</u></string>
+    <string name="tv_showsportequipment_text">nothing in your collection yet ....</string>
+    <string name="tv_showsport_text">Sport</string>
 
 </resources>

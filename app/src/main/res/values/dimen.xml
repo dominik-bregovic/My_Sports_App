@@ -4,6 +4,8 @@
     <dimen name="fab_margin">16dp</dimen>
 
     <!-- Global variables -->
+    <dimen name="tb_toolbar">28sp</dimen>
+
     <dimen name="et_16sp_textsize">16sp</dimen>
     <dimen name="et_16dp_padding">16dp</dimen>
 

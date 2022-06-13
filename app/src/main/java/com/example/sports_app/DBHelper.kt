@@ -15,8 +15,8 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         // along with their data types is given
         val query = ("CREATE TABLE " + TABLE_NAME + " ("
                 + ID_COL + " INTEGER PRIMARY KEY, " +
-                NAME_COl + " TEXT," +
-                AGE_COL + " TEXT" + ")")
+                SPORT_COL + " TEXT," +
+                ITEM_COL + " TEXT" + ")")
 
         // we are calling sqlite
         // method for executing our query
@@ -30,7 +30,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     }
 
     // This method is for adding data in our database
-    fun addName(name : String, age : String ){
+    fun addSport(sport : String, item : String ){
 
         // below we are creating
         // a content values variable
@@ -38,8 +38,8 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
 
         // we are inserting our values
         // in the form of key-value pair
-        values.put(NAME_COl, name)
-        values.put(AGE_COL, age)
+        values.put(SPORT_COL, sport)
+        values.put(ITEM_COL, item)
 
         // here we are creating a
         // writable variable of
@@ -57,7 +57,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
 
     // below method is to get
     // all data from our database
-    fun getName(): Cursor? {
+    fun getSports(): Cursor? {
 
         // here we are creating a readable
         // variable of our database
@@ -86,9 +86,9 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         val ID_COL = "id"
 
         // below is the variable for name column
-        val NAME_COl = "name"
+        val SPORT_COL = "name"
 
         // below is the variable for age column
-        val AGE_COL = "age"
+        val ITEM_COL = "age"
     }
 }

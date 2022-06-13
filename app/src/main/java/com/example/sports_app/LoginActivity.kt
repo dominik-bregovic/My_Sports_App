@@ -4,9 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
@@ -14,6 +18,15 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
+
+
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
+//        toolbar.inflateMenu(R.menu.main_menu)
+//        supportActionBar?.setDisplayHomeAsUpEnabled(true);
+//        supportActionBar?.setHomeButtonEnabled(true);
+
+
         val loginButton = findViewById<Button>(R.id.btn_login_login)
         val pass = findViewById<TextView>(R.id.et_login_password)
         val email = findViewById<TextView>(R.id.et_login_email)
@@ -88,5 +101,20 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
+
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.tb_menu_logout){
+            FirebaseAuth.getInstance().signOut()
+            startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

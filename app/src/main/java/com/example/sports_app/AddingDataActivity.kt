@@ -14,8 +14,8 @@ class AddingDataActivity : AppCompatActivity() {
 
         val addNameButton = findViewById<Button>(R.id.addName)
        /* val printNameButton = findViewById<Button>(R.id.printName)*/
-        val nameText = findViewById<TextView>(R.id.enterName)
-        val ageText = findViewById<TextView>(R.id.enterAge)
+        val sportText = findViewById<TextView>(R.id.enterSport)
+        val itemText = findViewById<TextView>(R.id.enterItem)
 
         // below code is to add on click
         // listener to our add name button
@@ -28,20 +28,20 @@ class AddingDataActivity : AppCompatActivity() {
 
             // creating variables for values
             // in name and age edit texts
-            val name = nameText.text.toString()
-            val age = ageText.text.toString()
+            val sport = sportText.text.toString()
+            val item = itemText.text.toString()
 
             // calling method to add
             // name to our database
-            db.addName(name, age)
+            db.addSport(sport, item)
 
             // Toast to message on the screen
-            Toast.makeText(this, name + " added to database", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, item + " added to database", Toast.LENGTH_LONG).show()
             println(db.readableDatabase)
 
             // at last, clearing edit texts
-            nameText.clearComposingText()
-            ageText.clearComposingText()
+            sportText.clearComposingText()
+            itemText.clearComposingText()
         }
 
         // below code is to add on  click
@@ -51,8 +51,8 @@ class AddingDataActivity : AppCompatActivity() {
 //            // creating a DBHelper class
 //            // and passing context to it
 //            val db = DBHelper(this, null)
-//            val nameField = findViewById<TextView>(R.id.Name)
-//            val ageField = findViewById<TextView>(R.id.Age)
+//            val nameField = findViewById<TextView>(R.id.Sport)
+//            val ageField = findViewById<TextView>(R.id.Item)
 //
 //            // below is the variable for cursor
 //            // we have called method to get

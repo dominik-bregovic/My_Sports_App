@@ -8,9 +8,6 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SportsMaster"/>
+
 
 </androidx.appcompat.widget.Toolbar>

@@ -6,40 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".AddingDataActivity">
     <include
-        android:id="@+id/include"
+        android:id="@+id/toolbar"
         layout="@layout/toolbar" />
-
-
 
         <!-- Edit text to enter name -->
 
     <!-- Edit text to enter age -->
-    <EditText
-        android:id="@+id/enterName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20sp"
-        android:layout_marginTop="32dp"
-        android:hint="@string/et_addingdata_sport_text"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/enterAge"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include" />
 
 
     <!-- Button to add Name -->
+
     <EditText
-        android:id="@+id/enterAge"
+        android:id="@+id/enterSport"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20sp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="100dp"
+        android:hint="@string/et_addingdata_sport_text"
+        android:textSize="22sp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <EditText
+        android:id="@+id/enterItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20sp"
+        android:layout_marginTop="132dp"
         android:hint="@string/et_addingdata_item_text"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterName" />
+        app:layout_constraintTop_toBottomOf="@+id/enterSport" />
 
     <Button
         android:id="@+id/addName"
@@ -54,7 +56,7 @@
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterAge" />
+        app:layout_constraintTop_toBottomOf="@+id/enterItem" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
