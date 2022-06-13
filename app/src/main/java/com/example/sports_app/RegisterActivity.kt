@@ -9,7 +9,14 @@ import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import java.util.*
+import kotlin.collections.ArrayList
 
+/**
+ * Registering over google firebase
+ * Authors: Gerwald Gindrawady, Dominik Bregovic, Lukas Linzer
+ * Last Changed: 13.06.2022
+ */
 class RegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,11 +28,18 @@ class RegisterActivity : AppCompatActivity() {
         val pass = findViewById<TextView>(R.id.et_register_password)
         val confirmPass = findViewById<TextView>(R.id.et_register_confirmpassword)
         val toRegister = findViewById<TextView>(R.id.tv_register_login)
+        val fields: MutableList<TextView> = ArrayList()
+        val text: MutableList<String> = ArrayList()
+        Collections.addAll(fields, first, last, email, pass, confirmPass)
+        Collections.addAll(text, "Please enter firstname", "Please enter lastname", "Please enter mail", "Please enter password", "Please enter confirmation")
+        
         toRegister.setOnClickListener{
             startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
         }
 
         button.setOnClickListener{
+
+            // Check if field is empty
             when{
                 TextUtils.isEmpty(email.text.toString().trim { it <= ' '}) -> {
                     Toast.makeText(
@@ -59,14 +73,6 @@ class RegisterActivity : AppCompatActivity() {
                     ).show()
                 }
 
-                TextUtils.isEmpty(pass.text.toString().trim { it <= ' '}) -> {
-                    Toast.makeText(
-                        this@RegisterActivity,
-                        "Please enter password",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
-
                 TextUtils.isEmpty(confirmPass.text.toString().trim { it <= ' '}) -> {
                     Toast.makeText(
                         this@RegisterActivity,
@@ -74,6 +80,8 @@ class RegisterActivity : AppCompatActivity() {
                         Toast.LENGTH_SHORT
                     ).show()
                 }
+
+                // when no field empty then register
                 else -> {
                     val emailText = email.text.toString().trim() { it <= ' '}
                     val passText = pass.text.toString().trim() { it <= ' '}
@@ -112,11 +120,9 @@ class RegisterActivity : AppCompatActivity() {
 
                         }
 
-
                 }
             }
-
-
         }
     }
+
 }

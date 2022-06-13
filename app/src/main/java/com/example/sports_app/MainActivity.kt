@@ -1,15 +1,21 @@
 package com.example.sports_app
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.FirebaseAuth
 
+/**
+ * Selecting the sport of your choice
+ * Here jumping from one activity to another: AddingData, ShowSport and back to login
+ * Authors: Gerwald Gindrawady, Dominik Bregovic, Lukas Linzer
+ * Last Changed: 13.06.2022
+ */
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,13 +27,7 @@ class MainActivity : AppCompatActivity() {
         val addButton = findViewById<ImageButton>(R.id.btn_main_add)
         addButton.setOnClickListener{
             startActivity(Intent(this@MainActivity, AddingDataActivity::class.java))
-            finish()
-        }
-        val logoutButton = findViewById<Button>(R.id.btn_main_logout)
-        logoutButton.setOnClickListener{
-            FirebaseAuth.getInstance().signOut()
-            startActivity(Intent(this@MainActivity, LoginActivity::class.java))
-            finish()
+//            finish()
         }
 
         createSpinner()
@@ -35,9 +35,12 @@ class MainActivity : AppCompatActivity() {
 
     fun createSpinner(){
         val db = DBHelper(this, null)
-        val courser = db.getSports()
+        val courser = db.getSportsTable()
         val list: MutableList<String> = ArrayList()
         val spinner = findViewById<Spinner>(R.id.spinnerSports)
+
+        // getting the Data from DB
+        list.add("Select...")
         courser!!.moveToFirst()
         try {
             while (courser.moveToNext()) {
@@ -47,20 +50,20 @@ class MainActivity : AppCompatActivity() {
             courser.close();
         }
 
+
+        // adding the Data to Spinner
         if (spinner != null) {
             val adapter = ArrayAdapter(this,
                 android.R.layout.simple_spinner_item, list)
             spinner.adapter = adapter
         }
-
         spinner.onItemSelectedListener = object :
             AdapterView.OnItemSelectedListener {
             override fun onItemSelected(parent: AdapterView<*>,
                                         view: View, position: Int, id: Long) {
-                Toast.makeText(this@MainActivity,
-                    list[position], Toast.LENGTH_SHORT).show()
+                if (position > 0 )
+                changeToSelectedView(list[position])
             }
-
             override fun onNothingSelected(parent: AdapterView<*>) {
                 // write code to perform some action
             }
@@ -68,8 +71,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun changeToSelectedView(sport: String){
-        startActivity(Intent(this@MainActivity, LoginActivity::class.java))
-        finish()
+        val intent = Intent(this@MainActivity, ShowSportActivity::class.java)
+        intent.putExtra("sport",sport)
+        startActivity(intent)
+//        finish()
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

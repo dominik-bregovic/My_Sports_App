@@ -4,11 +4,15 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
+/**
+ * Forgotten password gets restored over google firebase
+ * Authors: Gerwald Gindrawady, Dominik Bregovic, Lukas Linzer
+ * Last Changed: 13.06.2022
+ */
 class ForgotPasswordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,8 +49,8 @@ class ForgotPasswordActivity : AppCompatActivity() {
                                 Toast.LENGTH_LONG
                             ).show()
                         }
-
                     }
+
             }
         }
     }

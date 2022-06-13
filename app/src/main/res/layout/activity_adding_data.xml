@@ -9,13 +9,6 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
 
-        <!-- Edit text to enter name -->
-
-    <!-- Edit text to enter age -->
-
-
-    <!-- Button to add Name -->
-
     <EditText
         android:id="@+id/enterSport"
         android:layout_width="match_parent"

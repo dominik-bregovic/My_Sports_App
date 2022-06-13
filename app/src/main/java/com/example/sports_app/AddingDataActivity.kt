@@ -1,17 +1,27 @@
 package com.example.sports_app
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
+import com.google.firebase.auth.FirebaseAuth
 
-
+/**
+ * Here adding Data from app to DB
+ * Authors: Gerwald Gindrawady, Dominik Bregovic, Lukas Linzer
+ * Last Changed: 13.06.2022
+ */
 class AddingDataActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adding_data)
-
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        setSupportActionBar(toolbar)
         val addNameButton = findViewById<Button>(R.id.addName)
        /* val printNameButton = findViewById<Button>(R.id.printName)*/
         val sportText = findViewById<TextView>(R.id.enterSport)
@@ -77,5 +87,18 @@ class AddingDataActivity : AppCompatActivity() {
 //            // at last we close our cursor
 //            allNames.close()
 //        }
+    }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.tb_menu_logout){
+            FirebaseAuth.getInstance().signOut()
+            startActivity(Intent(this@AddingDataActivity, LoginActivity::class.java))
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

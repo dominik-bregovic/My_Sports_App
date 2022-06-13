@@ -14,6 +14,11 @@ import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
+/**
+ * Logging in with email and password over google firebase
+ * Authors: Gerwald Gindrawady, Dominik Bregovic, Lukas Linzer
+ * Last Changed: 13.06.2022
+ */
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

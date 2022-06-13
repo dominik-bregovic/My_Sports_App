@@ -6,6 +6,13 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 
+/**
+ * Code imported from GfG
+ * A simple SQLLight DB with one query
+ * Authors: Gerwald Gindrawady, Dominik Bregovic, Lukas Linzer
+ * Last Changed: 13.06.2022
+ */
+
 class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     SQLiteOpenHelper(context, DATABASE_NAME, factory, DATABASE_VERSION) {
 
@@ -57,7 +64,7 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
 
     // below method is to get
     // all data from our database
-    fun getSports(): Cursor? {
+    fun getSportsTable(): Cursor? {
 
         // here we are creating a readable
         // variable of our database
@@ -86,9 +93,9 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         val ID_COL = "id"
 
         // below is the variable for name column
-        val SPORT_COL = "name"
+        val SPORT_COL = "sport"
 
         // below is the variable for age column
-        val ITEM_COL = "age"
+        val ITEM_COL = "item"
     }
 }
