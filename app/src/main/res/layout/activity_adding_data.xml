@@ -28,45 +28,32 @@
 
     <LinearLayout
         android:id="@+id/ll_add_items"
-        android:layout_height="wrap_content"
         android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:divider="@drawable/divider"
         android:gravity="center"
         android:orientation="vertical"
+        android:showDividers="middle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toBottomOf="@+id/enterSport">
 
 
-        <EditText
-            android:id="@+id/enterItem"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20sp"
-            android:layout_marginTop="132dp"
-            android:background="@drawable/textview_border2"
-            android:hint="@string/et_addingdata_item_text"
-            android:padding="5dp"
-            android:singleLine="true"
-            android:textSize="22sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/enterSport" />
-
     </LinearLayout>
 
     <ImageButton
         android:id="@+id/btn_addanother_item"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="176dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:adjustViewBounds="true"
         android:background="#FAFAFA"
         android:scaleX="3"
         android:scaleY="3"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll_add_items"
         app:srcCompat="@drawable/ic_action_add" />
 
     <Button
@@ -78,7 +65,6 @@
         android:background="@color/colorPrimary"
         android:text="@string/btn_addingdata_submit_text"
         android:textColor="#ffffff"
-
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

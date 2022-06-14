@@ -18,39 +18,45 @@ import com.google.firebase.auth.FirebaseAuth
  * Last Changed: 13.06.2022
  */
 class AddingDataActivity : AppCompatActivity() {
+    private var maxItems: Int = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_adding_data)
-        val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
 
-        val addNameButton = findViewById<Button>(R.id.addName)
+        // Retrieve fields
+        val toolbar = findViewById<Toolbar>(R.id.toolbar)
+        val addToDbButton = findViewById<Button>(R.id.addName)
         val addAnotherItemButton = findViewById<ImageButton>(R.id.btn_addanother_item)
         val editLinearLayout = findViewById<LinearLayout>(R.id.ll_add_items)
-       /* val printNameButton = findViewById<Button>(R.id.printName)*/
-        val sportText = findViewById<TextView>(R.id.enterSport)
-        val itemText = findViewById<TextView>(R.id.enterItem)
+        val sportsName = findViewById<EditText>(R.id.enterSport)
+        //val firstItem = findViewById<EditText>(R.id.enterItem)
+        var itemText = getString(R.string.et_addingdata_item_text)
+
+        //init commands for screen
+        setSupportActionBar(toolbar)
+        createEditText(editLinearLayout, itemText)
 
 
+        //Submit Button for adding item-boxes
         addAnotherItemButton.setOnClickListener{
-            // Create EditText
-            val editText = EditText(this)
-            editText
-            editText.hint = "Enter item"
-            editText.setBackgroundResource(R.drawable.textview_border2)
-            editText.textSize = 22F
-            editText.layoutParams = LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT)
-            editText.setPadding(20, 20, 20, 20)
 
-            // Add EditText to LinearLayout
-            editLinearLayout?.addView(editText)
+            if(maxItems != 6){
+                // Create EditText
+                createEditText(editLinearLayout, itemText)
+                maxItems += 1
+            }else{
+                Toast.makeText(
+                    this@AddingDataActivity,
+                    "Max amount of items reached",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
         }
 
         // below code is to add on click
         // listener to our add name button
-        addNameButton.setOnClickListener{
+        addToDbButton.setOnClickListener{
 
             // below we have created
             // a new DBHelper class,
@@ -59,10 +65,9 @@ class AddingDataActivity : AppCompatActivity() {
 
             // creating variables for values
             // in name and age edit texts
-            val sport = sportText.text.toString()
-            val item = itemText.text.toString()
+            val sport = sportsName.text.toString()
             val items: MutableList<EditText> = ArrayList()
-//            items.add(item)
+//            items.add(firstItem)
             for (i in 0 until editLinearLayout.getChildCount()) if (editLinearLayout.getChildAt(i) is EditText) items.add(
                 editLinearLayout.getChildAt(i) as EditText
             )
@@ -72,15 +77,36 @@ class AddingDataActivity : AppCompatActivity() {
             db.addSport(sport, items)
 
             // Toast to message on the screen
-            Toast.makeText(this, item + " added to database", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Items added to database", Toast.LENGTH_LONG).show()
             println(db.readableDatabase)
 
             // at last, clearing edit texts
-            sportText.clearComposingText()
-            itemText.clearComposingText()
+            clearTextFields(sportsName, items)
         }
 
     }
+    fun createEditText(layout: LinearLayout, text: String){
+        val editText = EditText(this)
+        editText.isSingleLine = true
+        editText.hint = text
+        editText.setBackgroundResource(R.drawable.textview_border2)
+        editText.textSize = 22F
+        editText.layoutParams = LinearLayout.LayoutParams(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT)
+        editText.setPadding(20, 20, 20, 20)
+
+        // Add EditText to LinearLayout
+        layout?.addView(editText)
+    }
+
+    fun clearTextFields(sport: EditText, items: List<EditText>){
+        sport.setText("")
+        for (item in items){
+            item.setText("")
+        }
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
         return true

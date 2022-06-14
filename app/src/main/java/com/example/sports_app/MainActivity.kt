@@ -45,12 +45,15 @@ class MainActivity : AppCompatActivity() {
         list.add("Select...")
         courser!!.moveToFirst()
         try {
-            do {
-                var course = courser.getString(courser.getColumnIndex(DBHelper.SPORT_COL))
-                if (!list.contains(course)){
-                    list.add(course)
-                }
-            }while (courser.moveToNext())
+            if (courser != null &&  courser.moveToFirst()){
+                do {
+                    var course = courser.getString(courser.getColumnIndex(DBHelper.SPORT_COL))
+                    if (!list.contains(course)){
+                        list.add(course)
+                    }
+                }while (courser.moveToNext())
+            }
+
         } finally {
             courser.close();
         }

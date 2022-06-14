@@ -8,7 +8,7 @@
     <string name="tb_toolbar_logout_text">Logout</string>
 
     <!-- MAIN SCREEN-->
-    <string name="ml_main_choose">Choose your Sport</string>
+    <string name="ml_main_choose">Choose your Sport:</string>
     <string name="tv_main_login_text">Logged in Sucessfully!</string>
 
     <!-- LOGIN SCREEN -->
