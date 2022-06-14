@@ -24,11 +24,11 @@
     <EditText
         android:id="@+id/ml_showequipment_text"
         android:layout_width="307dp"
-        android:layout_height="65dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:ems="10"
         android:gravity="start|top"
         android:inputType="textMultiLine"
+        android:maxLines="8"
         android:text="@string/tv_showsportequipment_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

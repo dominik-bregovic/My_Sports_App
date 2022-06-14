@@ -24,19 +24,39 @@ class ShowSportActivity : AppCompatActivity() {
         val intent = intent
         val choosenSport = intent.getStringExtra("sport")
         val db = DBHelper(this, null)
-        val courser = db.getSportsTable()
         val header = findViewById<TextView>(R.id.tv_showsport_header)
         val equipment = findViewById<TextView>(R.id.ml_showequipment_text)
+        val courser = db.getSportsTable()
+        val items: MutableList<String> = ArrayList()
+        val sports: MutableList<String> = ArrayList()
 
 
         setSupportActionBar(toolbar)
         header.text = choosenSport
         courser!!.moveToFirst()
         try {
-            equipment.text =  courser.getString(courser.getColumnIndex(DBHelper.ITEM_COL))
-        }finally {
-            courser.close()
+            do {
+                items.add(courser.getString(courser.getColumnIndex(DBHelper.ITEM_COL)))
+                sports.add(courser.getString(courser.getColumnIndex(DBHelper.SPORT_COL)))
+            }while (courser.moveToNext())
+        } finally {
+            courser.close();
         }
+        println(choosenSport)
+        var entry = ""
+        for (i in sports.indices){
+            println(i)
+            print(sports[i])
+            if(sports[i] == choosenSport){
+                entry += "- " + items[i] + "\n"
+
+                println(entry)
+            }
+
+        }
+        equipment.text = entry
+        println(items)
+        println(sports)
     }
 
 

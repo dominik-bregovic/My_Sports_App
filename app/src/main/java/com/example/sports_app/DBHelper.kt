@@ -82,6 +82,18 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         return db.rawQuery("SELECT * FROM " + TABLE_NAME, null)
 
     }
+//    fun getSportsTable(sport: String): Cursor? {
+//
+//        // here we are creating a readable
+//        // variable of our database
+//        // as we want to read value from it
+//        val db = this.readableDatabase
+//
+//        // below code returns a cursor to
+//        // read data from the database
+//        return db.rawQuery("SELECT $ITEM_COL FROM $TABLE_NAME Where sport LIKE $sport", null)
+//
+//    }
 
     companion object{
         // here we have defined variables for our database

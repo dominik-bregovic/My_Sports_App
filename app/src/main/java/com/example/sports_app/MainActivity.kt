@@ -45,13 +45,15 @@ class MainActivity : AppCompatActivity() {
         list.add("Select...")
         courser!!.moveToFirst()
         try {
-            while (courser.moveToNext()) {
-                list.add(courser.getString(courser.getColumnIndex(DBHelper.SPORT_COL)))
-            }
+            do {
+                var course = courser.getString(courser.getColumnIndex(DBHelper.SPORT_COL))
+                if (!list.contains(course)){
+                    list.add(course)
+                }
+            }while (courser.moveToNext())
         } finally {
             courser.close();
         }
-        println(list)
 
         // adding the Data to Spinner
         if (spinner != null) {
