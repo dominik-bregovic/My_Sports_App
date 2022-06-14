@@ -46,6 +46,7 @@
     <string name="tv_addingdata_login_text">Back</string>
     <string name="tv_showsportequipment_text">nothing in your collection yet ....</string>
     <string name="tv_showsport_text">Sport</string>
+    <string name="tv_main_addanothoersport_text">Add another sport:</string>
 
 
 </resources>

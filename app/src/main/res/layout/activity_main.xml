@@ -15,17 +15,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="85dp"
-        android:text="@string/tv_main_login_text"
+        android:layout_marginBottom="80dp"
+        android:text="@string/tv_main_addanothoersport_text"
+        android:textSize="@dimen/tv_20sp_textsize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_main_add"
+        app:layout_constraintHorizontal_bias="0.814"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Spinner
         android:id="@+id/spinnerSports"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="@+id/headLine"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/headLine"
@@ -43,7 +45,6 @@
         android:inputType="textMultiLine"
         android:text="@string/ml_main_choose"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,7 +54,7 @@
         android:layout_height="50dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="70dp"
-        android:adjustViewBounds="false"
+        android:adjustViewBounds="true"
         android:background="#FAFAFA"
         android:scaleX="3"
         android:scaleY="3"

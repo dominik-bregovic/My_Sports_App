@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item
+        type="id"
+        name="edittext1_item" />
+    <item
+        type="id"
+        name="edittext2_item" />
+    <item
+        type="id"
+        name="edittext3_item" />
+    <item
+        type="id"
+        name="edittext4_item" />
+</resources>

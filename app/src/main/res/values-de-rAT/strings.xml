@@ -34,4 +34,5 @@
     <string name="tv_addingdata_login_text">Zurück</string>
     <string name="tv_showsportequipment_text">Noch nichts in unserer Sammlung ....</string>
     <string name="tv_showsport_text">Sport</string>
+    <string name="tv_main_addanothoersport_text">Füge neue Sportart hinzu:</string>
 </resources>

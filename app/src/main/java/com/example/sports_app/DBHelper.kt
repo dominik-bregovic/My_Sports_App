@@ -5,6 +5,7 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.widget.EditText
 
 /**
  * Code imported from GfG
@@ -37,16 +38,11 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
     }
 
     // This method is for adding data in our database
-    fun addSport(sport : String, item : String ){
+    fun addSport(sport : String, items : MutableList<EditText> ){
 
         // below we are creating
         // a content values variable
         val values = ContentValues()
-
-        // we are inserting our values
-        // in the form of key-value pair
-        values.put(SPORT_COL, sport)
-        values.put(ITEM_COL, item)
 
         // here we are creating a
         // writable variable of
@@ -54,8 +50,18 @@ class DBHelper(context: Context, factory: SQLiteDatabase.CursorFactory?) :
         // insert value in our database
         val db = this.writableDatabase
 
-        // all values are inserted into database
-        db.insert(TABLE_NAME, null, values)
+        // we are inserting our values
+        // in the form of key-value pair
+        for (item in items){
+            values.put(SPORT_COL, sport)
+            values.put(ITEM_COL, item.text.toString().trim { it <= ' '})
+
+            // all values are inserted into database
+            db.insert(TABLE_NAME, null, values)
+
+            println(sport)
+            println(item.text.toString())
+        }
 
         // at last we are
         // closing our database

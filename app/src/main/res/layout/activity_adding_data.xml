@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddingDataActivity">
+
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar" />
@@ -15,41 +16,73 @@
         android:layout_height="wrap_content"
         android:layout_margin="20sp"
         android:layout_marginTop="100dp"
+        android:background="@drawable/textview_border"
         android:hint="@string/et_addingdata_sport_text"
+        android:padding="10dp"
+        android:singleLine="true"
         android:textSize="22sp"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <EditText
-        android:id="@+id/enterItem"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:id="@+id/ll_add_items"
         android:layout_height="wrap_content"
-        android:layout_margin="20sp"
-        android:layout_marginTop="132dp"
-        android:hint="@string/et_addingdata_item_text"
-        android:textSize="22sp"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterSport" />
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toBottomOf="@+id/enterSport">
+
+
+        <EditText
+            android:id="@+id/enterItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20sp"
+            android:layout_marginTop="132dp"
+            android:background="@drawable/textview_border2"
+            android:hint="@string/et_addingdata_item_text"
+            android:padding="5dp"
+            android:singleLine="true"
+            android:textSize="22sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.6"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enterSport" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/btn_addanother_item"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="176dp"
+        android:adjustViewBounds="true"
+        android:background="#FAFAFA"
+        android:scaleX="3"
+        android:scaleY="3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/ic_action_add" />
 
     <Button
         android:id="@+id/addName"
         android:layout_width="150sp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="64dp"
+        android:layout_marginBottom="64dp"
         android:background="@color/colorPrimary"
         android:text="@string/btn_addingdata_submit_text"
         android:textColor="#ffffff"
-        android:textSize="20sp"
 
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterItem" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
