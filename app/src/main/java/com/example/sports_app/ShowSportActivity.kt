@@ -20,6 +20,8 @@ class ShowSportActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_show_sport)
+
+        //Getting resources
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         val intent = intent
         val choosenSport = intent.getStringExtra("sport")
@@ -30,9 +32,11 @@ class ShowSportActivity : AppCompatActivity() {
         val items: MutableList<String> = ArrayList()
         val sports: MutableList<String> = ArrayList()
 
-
+        //Setting initial methods
         setSupportActionBar(toolbar)
         header.text = choosenSport
+
+        //retrieving Data from DB
         courser!!.moveToFirst()
         try {
             do {
@@ -42,7 +46,9 @@ class ShowSportActivity : AppCompatActivity() {
         } finally {
             courser.close();
         }
-        println(choosenSport)
+
+
+        //concatenate all items to one String
         var entry = ""
         for (i in sports.indices){
             println(i)
@@ -55,16 +61,15 @@ class ShowSportActivity : AppCompatActivity() {
 
         }
         equipment.text = entry
-        println(items)
-        println(sports)
+
     }
 
-
+    //adding menu to toolbar with logout function
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
         return true
     }
-
+    // logout function
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.tb_menu_logout){
             FirebaseAuth.getInstance().signOut()
